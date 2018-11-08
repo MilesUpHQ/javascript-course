@@ -1,0 +1,41 @@
+let cleanRoom = function(){
+  return new Promise(function(resolve, reject){
+    resolve('Cleaned the room');
+  });
+};
+
+let removeGarbage = function(message) {
+  return new Promise(function(resolve, reject){
+    resolve(message + 'remove Garbage')
+  });
+};
+
+let winIcecream = function(message) {
+  return new Promise(function(resolve, reject){
+    resolve(message + 'won Icecream')
+  });
+};
+
+cleanRoom().then(function(result){
+  return removeGarbage(result);
+}).then(function(result){
+  return winIcecream(result);
+}).then(function(result){
+  console.log('finished' + result);
+})
+
+Promise.all([
+  cleanRoom(),
+  removeGarbage(),
+  winIcecream()
+]).then(function(){
+  console.log('All finished');
+})
+
+Promise.race([
+  cleanRoom(),
+  removeGarbage(),
+  winIcecream()
+]).then(function(){
+  console.log('Once of them is finished');
+})
