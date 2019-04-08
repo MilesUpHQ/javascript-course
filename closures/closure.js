@@ -1,5 +1,7 @@
 // A closure is a function having access to the parent scope, even after the parent function has closed.
 
+// Having a function access variables when running in a different scope is Closure.
+
 function makeFunc() {
   var name = "Mozilla";
   function displayName() {
