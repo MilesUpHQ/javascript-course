@@ -11,7 +11,6 @@ foo.bar(); // "bar"
 
 // Above is not a module because it is not encapsulating anything. No hiding information, everything is accessibile to the outside world. But Modules should be hiding information and give access to onely ones that are really required in public
 
-
 // Class Module Looks like this
 
 var foo = (function(){
@@ -42,3 +41,9 @@ var foo = (function(){
 })();
 
 foo.bar(); // "baz"
+
+// Advantage?
+// Encapsulation (hiding of things) - organize code well and restrict access
+
+// Disadvantage?
+// Testability - Difficult to test functions that are hidden
